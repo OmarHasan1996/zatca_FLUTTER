@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zatca/constant/appStrings.dart';
 import 'package:zatca/constant/app_size.dart';
 import 'package:zatca/constant/colors.dart';
 import 'package:zatca/constant/images.dart';
@@ -28,7 +29,7 @@ class _BaseState extends State<Base> {
             child: Row(
               children: [
                 Image.asset(ImagesPath.logo, height: AppHeight.h8,),
-                AppWidget.headText('ENOC', color: AppColors.whiteColor, scale: 1.2, padding: AppWidth.w2),
+                AppWidget.headText(AppStrings.enoc, color: AppColors.whiteColor, scale: 1.2, padding: AppWidth.w2),
               ],
             ),
           ),

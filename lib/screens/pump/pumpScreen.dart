@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zatca/api_service.dart';
+import 'package:zatca/constant/appStrings.dart';
 import 'package:zatca/constant/app_size.dart';
 import 'package:zatca/constant/colors.dart';
 import 'package:zatca/helper/appWidget.dart';
@@ -29,16 +30,16 @@ class _PumpScreenState extends State<PumpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AppWidget.bodyText('Site Number:'),
+              AppWidget.bodyText(AppStrings.siteNumber),
               AppWidget.textFormFiled(controller: _siteNumber),
               SizedBox(height: AppHeight.h1,),
-              AppWidget.bodyText('Pump Number:'),
+              AppWidget.bodyText(AppStrings.pumpNumber),
               AppWidget.textFormFiled(controller: _pumpNumber),
               const Spacer(),
               SizedBox(height: AppHeight.h2,),
-              AppWidget.elevatedButton(text: 'GET', press: ()=> getTransaction(), backcolor: AppColors.mainColor2),
+              AppWidget.elevatedButton(text: AppStrings.get, press: ()=> getTransaction(), backcolor: AppColors.mainColor2),
               SizedBox(height: AppHeight.h2,),
-              AppWidget.elevatedButton(text: 'CLOSE', press: ()=> close(), backcolor: AppColors.mainColor3)
+              AppWidget.elevatedButton(text: AppStrings.close, press: ()=> close(), backcolor: AppColors.mainColor3)
             ],
           ),
         ),

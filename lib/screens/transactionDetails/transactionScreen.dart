@@ -9,8 +9,10 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:zatca/api_service.dart';
 
 import 'package:zatca/appVariable.dart';
+import 'package:zatca/constant/appStrings.dart';
 import 'package:zatca/constant/app_size.dart';
 import 'package:zatca/constant/colors.dart';
+import 'package:zatca/constant/images.dart';
 import 'package:zatca/helper/appWidget.dart';
 import 'package:zatca/helper/sunmiPrinterHelper.dart';
 import 'package:zatca/screens/base.dart';
@@ -28,6 +30,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) => _afterBuild());  // TODO: implement initState
     super.initState();
+    _printerPage.add(Image.asset(ImagesPath.splashLogo, height: AppHeight.h16,));
     lastTransaction.forEach((k, v) => {if(v!= null && v!=0) _itemList.add(ItemValue(item: k, value: v.toString()))});
     _itemList.forEach((e) {_printerPage.add(_itemContainer(item: e.item, value: e.value));});
   }
@@ -54,9 +57,9 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     )
                 ),
                 SizedBox(height: AppHeight.h2,),
-                AppWidget.elevatedButton(text: 'PRINT', press: ()=> print(), backcolor: AppColors.mainColor2),
+                AppWidget.elevatedButton(text: AppStrings.print, press: ()=> print(), backcolor: AppColors.mainColor2),
                 SizedBox(height: AppHeight.h2,),
-                AppWidget.elevatedButton(text: 'CLOSE', press: ()=> close(), backcolor: AppColors.mainColor3)
+                AppWidget.elevatedButton(text: AppStrings.close, press: ()=> close(), backcolor: AppColors.mainColor3)
               ],
             ),
           ),
